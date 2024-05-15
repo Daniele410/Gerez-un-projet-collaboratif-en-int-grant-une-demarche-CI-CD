@@ -27,12 +27,12 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bobapp-front:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/danapp-front:latest
           context: front
         
       - name: Build and push Back image
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/bobapp-back:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/danapp-back:latest
           context: back
