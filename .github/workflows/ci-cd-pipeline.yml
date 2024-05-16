@@ -66,8 +66,8 @@ jobs:
         with:
           projectBaseDir: .
           args: >
-            -Dsonar.projectKey=sonar.projectKey
-            -Dsonar.organization=sonar.organization
+            -Dsonar.projectKey=Daniele410_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD
+            -Dsonar.organization=daniele410
             -Dsonar.javascript.lcov.reportPaths=front/coverage/lcov.info
             -Dsonar.java.binaries=back/target/classes
             -Dsonar.jacoco.reportPaths=back/target/site/jacoco/jacoco.xml
