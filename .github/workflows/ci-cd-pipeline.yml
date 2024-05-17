@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -65,6 +65,12 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=Daniele410_Gerez-un-projet-collaboratif-en-int-grant-une-demarche-CI-CD
+            -Dsonar.organization=daniele410
+            -Dsonar.javascript.lcov.reportPaths=front/coverage/lcov.info
+            -Dsonar.java.binaries=back/target/classes
+            -Dsonar.jacoco.reportPaths=back/target/site/jacoco/jacoco.xml
 
   front_tests_and_reports:
     name: Front Tests and Reports
@@ -90,7 +96,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
       - name: Install Dependencies
         run: npm ci
 
